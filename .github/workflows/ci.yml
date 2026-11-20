@@ -35,9 +35,9 @@ jobs:
       - name: Собрать архив проекта
         run: |
           tar --exclude=app.db --exclude=__pycache__ --exclude=.venv --exclude=.git \
-            -czf mini-shop.tar.gz .
+            -czf /tmp/mini-shop.tar.gz .
       - name: Загрузить артефакт
         uses: actions/upload-artifact@v4
         with:
           name: mini-shop
-          path: mini-shop.tar.gz
+          path: /tmp/mini-shop.tar.gz
